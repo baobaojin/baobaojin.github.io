@@ -20,8 +20,10 @@
 
     {%- if post.header !== false %}
       <header class="post-header">
+      
         <{%- if is_index %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">
           {# Link posts #}
+          
           {%- if post.link %}
             {%- if post.sticky > 0 %}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
@@ -43,6 +45,9 @@
             {{- post_edit(post.source) }}
           {%- endif %}
         </{%- if is_index %}h2{% else %}h1{%- endif %}>
+
+
+
 
         <div class="post-meta-container">
           {{ partial('_partials/post/post-meta.njk') }}
@@ -92,10 +97,21 @@
     {#####################}
     {### END POST BODY ###}
     {#####################}
+    <div>
+      {% if not is_index %}
+        {% include 'passage-end-tag.njk' %}
+      {% endif %}
+    </div>
 
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {{ partial('_partials/post/post-related.njk') }}
     {%- endif %}
+
+    <div>
+      {% if not is_index %}
+        {% include 'my-copyright.njk' %}
+      {% endif %}
+    </div>
 
     <footer class="post-footer">
       {%- if is_index %}
@@ -146,7 +162,7 @@
             </div>
           </div>
         {%- endif %}
-
+        
       {%- endif %}
     </footer>
   </article>

@@ -45,38 +45,35 @@ for $inject_style in hexo-config('injects.style')
   @import $inject_style;
 
 
-@media screen and (min-width:1200px) {
+// 主页文章添加阴影效果
+ .post {
+   margin-top: 60px;
+   margin-bottom: 60px;
+   padding: 25px;
+   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
+   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+}
 
-    body {
-    background-image:url(/images/bg.jpg);
-    background-repeat: no-repeat;
+body{
+    background:url(/images/bg.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
     background-attachment:fixed;
-    background-position:50% 50%;
-    background-size: cover
-    }
-
-    #footer a {
-        color:#444444;
-    }
+    background-position:center;
 }
 
 //改变背景色和透明度
 .main-inner {
-    background: #fff;
-    opacity: 0.9;
+    background: #ccc;
+    opacity: 0.8;
 }
 
-//改变背景色和透明度
-.main-inner {
-    background: #fff;
-    opacity: 0.9;
+// 主页文章添加阴影效果
+.post {
+   margin-top: 0px;
+   margin-bottom: 60px;
+   padding: 25px;
+   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
+   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
 }
 
-// 设置头像为圆形
-.site-author-image {
-  border-radius: 100%;
-  padding: 2px;
-  border: 2px dashed #fff;
-  animation: cycle 2s 0.5s forwards;
-  transition: border-radius 2s;
-}

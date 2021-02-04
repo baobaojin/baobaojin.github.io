@@ -52,3 +52,20 @@
 @import 'post-reward';
 
 @import 'post-followme' if (hexo-config('follow_me'));
+
+
+  // 文章内链接文本样式
+.post-body p a{
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+  &:hover {
+    color: #fc6423;
+    border-bottom: none;
+    border-bottom: 1px solid #fc6423;
+  }
+}
+
+
+// 增加版权信息
+@import "my-post-copyright"
